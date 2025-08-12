@@ -3,25 +3,30 @@ import { SignupElements } from "./signup.elements";
 
 export class SignupMethods {
     static insertUsername(username) {
-        SignupElements.textboxes.username.invoke('val',username);
+        SignupElements.textboxes.username.invoke('val', username);
 
     }
 
-    static inserPassword(password){
+    static inserPassword(password) {
         SignupElements.textboxes.password.invoke('val', password);
     }
 
-    static clickSignUpButton(){
+    static clickSignUpButton() {
         SignupElements.buttons.signup.click();
     }
 
-    static signup(username, password){
+    static signup(username, password) {
         this.insertUsername(username);
         this.inserPassword(password);
         this.clickSignUpButton();
     }
 
-    static verifySignUpSuccessFulMessageDisplayed(){
+    static verifySignUpSuccessFulMessageDisplayed() {
         CommanPageMethods.verifyAlert('Sign up successful.')
+    }
+
+
+    static verifyThatThisUserAlreadyExitMessageIsDisplayed() {
+        CommanPageMethods.verifyAlert('This user already exist.')
     }
 }
