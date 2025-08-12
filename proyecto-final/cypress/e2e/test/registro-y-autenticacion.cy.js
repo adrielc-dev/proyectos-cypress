@@ -3,6 +3,8 @@ import { CommanPageMethods } from "../pages/common-page/common-page.methods";
 import { SignupMethods } from "../pages/signup/sigup.methods";
 import { Logger } from "../util/logger";
 
+const user = CommanPageMethods.generateRandomString();
+const passoword = CommanPageMethods.generateRandomString(7);
 
 describe(CommanPageData.testSuites.registroYAutenticacion, () => {
     it('Registro de Usuario Válido', () => {
@@ -13,11 +15,11 @@ describe(CommanPageData.testSuites.registroYAutenticacion, () => {
         Logger.stepNumber(2);
         Logger.step('Hacer clic en "Sign up" en la barra de navegación.');
         CommanPageMethods.clickOnSignUpOption();
-        
+
         Logger.stepNumber(3);
         Logger.step('Completar todos los campos obligatorios con información válida.');
-        SignupMethods.insertUsername('gsgfasdfgdasf');
-        SignupMethods.inserPassword('gsgfasdfgdasf');
+        SignupMethods.insertUsername(user);
+        SignupMethods.inserPassword(passoword);
 
         Logger.stepNumber(4);
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.');
