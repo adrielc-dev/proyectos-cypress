@@ -1,13 +1,14 @@
 import { Logger } from "../../util/logger";
+import { CommanPageMethods } from "../common-page/common-page.methods";
 import { LoginElements } from "./login.elements";
 
 export class LoginMethods {
     static insertUsername(username) {
-        LoginElements.textboxes.username.invoke('val',username);
+        LoginElements.textboxes.username.invoke('val', username);
     }
 
     static insertPassword(password) {
-        LoginElements.textboxes.password.invoke('val',password);
+        LoginElements.textboxes.password.invoke('val', password);
     }
 
     static clickOnLoginButton() {
@@ -23,5 +24,8 @@ export class LoginMethods {
         this.clickOnLoginButton();
     }
 
+    static verifyWrongPasswordMessage() {
+        CommanPageMethods.verifyAlert('Wrong password.');
+    }
 
 }
