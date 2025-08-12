@@ -6,7 +6,7 @@ export class CommanPageData {
     static get testSuites(){
         return {
             registro: 'Registro',
-            autenticacion: 'Atenticación',
+            autenticacion: 'Autenticación',
             catalogoYCompras: 'Catálogo y Compras',
         }
     }

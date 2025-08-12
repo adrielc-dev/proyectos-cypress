@@ -44,4 +44,9 @@ export class CommanPageMethods {
         }
         return result;
     }
+
+
+    static verifySignedUser(username) {
+        CommanPageElements.signedUser.should('have.text', `Welcome ${username}`);
+    }
 }

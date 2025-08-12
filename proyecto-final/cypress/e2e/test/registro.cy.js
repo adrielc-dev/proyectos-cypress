@@ -1,12 +1,12 @@
 import { CommanPageData } from "../pages/common-page/common-page.data";
 import { CommanPageMethods } from "../pages/common-page/common-page.methods";
+import { LoginData } from "../pages/login/login.data";
 import { SignupMethods } from "../pages/signup/sigup.methods";
 import { Logger } from "../util/logger";
 
 const user = CommanPageMethods.generateRandomString();
 const passoword = CommanPageMethods.generateRandomString(7);
-
-const existingUser = "random01";
+const existingUser = LoginData.validCredentials.username;
 
 describe(CommanPageData.testSuites.registro, () => {
 

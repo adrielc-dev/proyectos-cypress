@@ -14,11 +14,16 @@ export class CommanPageElements {
                 return cy.contains('a', 'Cart');
             },
             get loginIn() {
-                return cy.contains('a', 'Login in');
+                return cy.contains('a', 'Log in');
             },
             get signUp() {
                 return cy.contains('a', 'Sign up');
             }
         }
+    }
+
+
+    static get signedUser(){
+        return cy.get('a#nameofuser');
     }
 }   
