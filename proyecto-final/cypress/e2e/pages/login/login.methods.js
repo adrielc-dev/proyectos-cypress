@@ -1,3 +1,4 @@
+import { Logger } from "../../util/logger";
 import { LoginElements } from "./login.elements";
 
 export class LoginMethods {
@@ -14,8 +15,11 @@ export class LoginMethods {
     }
 
     static login(username, password) {
+        Logger.subStep('Inserta el username');
         this.insertUsername(username);
+        Logger.subStep('Inserta el password');
         this.insertPassword(password);
+        Logger.subStep('Realiza click al botón de Login');
         this.clickOnLoginButton();
     }
 
