@@ -17,7 +17,7 @@ export class CommanPageElements {
                 return cy.contains('a', 'Login in');
             },
             get signUp() {
-                return cy.contains('a', 'Sign Up');
+                return cy.contains('a', 'Sign up');
             }
         }
     }

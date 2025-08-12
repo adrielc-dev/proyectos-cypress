@@ -3,6 +3,7 @@ import { CommanPageElements } from "./common-page.elements";
 
 export class CommanPageMethods {
     static navegateToDemoBlaze() {
+        cy.clearCookies();
         cy.visit(CommanPageData.url);
     }
 
@@ -26,5 +27,11 @@ export class CommanPageMethods {
     }
     static clickOnHomeOption() {
         CommanPageElements.topMenu.home.click();
+    }
+
+    static verifyAlert(expectedMessage) {
+        cy.on('windows:alert', (str) => {
+            expect(str).to.equal(expectedMessage);
+        })
     }
 }
